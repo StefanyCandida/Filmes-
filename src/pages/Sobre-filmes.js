@@ -4,21 +4,29 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
+  align-items:center;
   flex-wrap: wrap;
   justify-content: center;
   font-family:Roboto, sans-serif;
+  padding-top:10rem;
+ 
  
 `;
 const CaixaFilmes = styled.figure`
 display: flex;
-flex-direction:row;
-padding-top: 10px ;
-
+flex-direction:column;
 
 `;
 const Title = styled.figcaption`
 font-size: 1rem;
 text-align:center;
+font-weight: 600;
+cursor: pointer;
+&:hover{
+  color:magenta;
+  font-size: 1.5rem;
+}
+
 `;
 
 const BoxInput = styled.div`
@@ -48,8 +56,7 @@ const Posteres = styled.img`
 `;
 
 const apiFilmes = axios.create({
-  baseURL:
-    "https://api.themoviedb.org/3/movie/FIlmes?api_key=d2109f7fce9f4072f80df861fc4fdc66&language=pt-BR"
+  baseURL: "https://api.themoviedb.org/3/movie/popular?api_key=d2109f7fce9f4072f80df861fc4fdc66&language=en-US&page=1"
 });
 
 export default class App extends React.Component {
@@ -97,14 +104,16 @@ export default class App extends React.Component {
           <Input
             onChange={this.buscar}
             type="text"
-            placeholder="  Buscar Filmes"
+            placeholder="Buscar Filmes"
           />
         </BoxInput>
         <Container>
           {this.state.filmesFiltrado.map((item) => (
             <CaixaFilmes>
                <Posteres src={item.poster_path} alt={item.title} />
-               <Title>{item.title}</Title>             
+               <Title>{item.title}</Title> 
+               
+                             
             </CaixaFilmes>
           ))}
         </Container>

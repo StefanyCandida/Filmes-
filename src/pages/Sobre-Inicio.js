@@ -1,37 +1,26 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import Foto from '../img/Tetflix.png'
 
 const Container = styled.div`
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  font-family:  Roboto, sans-serif;
+  flex-direction:column;
+  align-items:center;
+  font-family:Roboto, sans-serif;
+  padding-top:10rem;
  
-`;
 
-const BoxInput = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 10vh;
+ 
+  `;
+const Img = styled.img`
+   width: 30%;  
 `;
-const Input = styled.input`
-height: 5vh;
-width: 40vh;
-border-radius: 1000px;
-text-align:center;
-position: fixed;
-left:80%;
-top 13%
-`;
-
-
 
 const apiFilmes = axios.create({
-  baseURL:
-    "https://api.themoviedb.org/3/tv/{tv_id}?api_key=d2109f7fce9f4072f80df861fc4fdc66&language=pt-br"
+  baseURL: "https://api.themoviedb.org/3/tv/popular?api_key=d2109f7fce9f4072f80df861fc4fdc66&language=en-US&page=1"
 });
-
 
 export default class App extends React.Component {
   state = {
@@ -44,7 +33,7 @@ export default class App extends React.Component {
   }
   getMovies = async () => {
     const response = await apiFilmes.get();
-    // console.log(response.data.results)
+    //console.log(response.data.results)
 
     const filmes = response.data.results.map((item) => {
       return {
@@ -59,10 +48,10 @@ export default class App extends React.Component {
     });
   };
 
-  buscar = (e) => {
+  buscar = (event) => {
     const { listFilmes } = this.state;
     const BuscarFilmes = listFilmes.filter((item) => {
-      if (item.title.toLowerCase().includes(e.target.value.toLowerCase())) {
+      if (item.title.toLowerCase().includes(event.target.value.toLowerCase())) {
         return true;
       }
     });
@@ -74,15 +63,12 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <BoxInput>
-          <Input
-            onChange={this.buscar}
-            type="text"
-            placeholder="  Buscar Filmes/Series"
-          />
-        </BoxInput>
+        
         <Container>
-         <h1>Bem Vindo ao Tefflix</h1>
+          <h1>Bem vindes ao Tefflix</h1>
+         <Img src={Foto} alt="Logo Tefflix"/> 
+         
+
         </Container>
       </div>
     );

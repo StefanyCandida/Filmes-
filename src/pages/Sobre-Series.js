@@ -7,18 +7,24 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   font-family:  Roboto, sans-serif;
+  padding-top:10rem;
  
-`;
-const CaixaFilmes = styled.figure`
-display: flex;
-flex-direction:row;
-padding-top: 20px ;
-
-
-`;
+ 
+  `;
+  const CaixaFilmes = styled.figure`
+  display: flex;
+  flex-direction:column;
+  
+  `;
 const Title = styled.figcaption`
 font-size: 1rem;
+font-weight: 600;
 text-align:center;
+cursor: pointer;
+&:hover{
+  color:magenta;
+  font-size: 1.5rem;
+}
 `;
 
 const BoxInput = styled.div`
@@ -46,8 +52,7 @@ const Posteres = styled.img`
 `;
 
 const apiFilmes = axios.create({
-  baseURL:
-    "https://api.themoviedb.org/3/tv/Series/season/Series1?api_key=d2109f7fce9f4072f80df861fc4fdc66&language=pt-BR"
+  baseURL: "https://api.themoviedb.org/3/tv/popular?api_key=d2109f7fce9f4072f80df861fc4fdc66&language=en-US&page=1"
 });
 
 export default class Series extends React.Component {
@@ -78,7 +83,7 @@ export default class Series extends React.Component {
   buscar = (e) => {
     const { listSeries } = this.state;
     const SeriesBuscar = listSeries.filter((item) => {
-      if (item.title.toLowerCase().includes(e.target.value.toLowerCase())) {
+      if (item.name.toLowerCase().includes(e.target.value.toLowerCase())) {
         return true;
       }
     });
@@ -101,9 +106,10 @@ export default class Series extends React.Component {
         </BoxInput>
         <Container>
           {this.state.buscadas.map((item) => (
-            <CaixaFilmes>
+         <CaixaFilmes>
                <Posteres src={item.poster_path} alt={item.name} />
-               <Title>{item.title}</Title>
+               <Title>{item.name}</Title> 
+                             
             </CaixaFilmes>
           ))}
         </Container>

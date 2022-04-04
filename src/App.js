@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 body{
  
    background-color:PaleVioletRed;
-}
+   
 `;
 const Navigation = styled.nav`
 background-color:pink;
@@ -42,6 +42,7 @@ const List = styled.ul`
 const Img = styled.img`
    width: 100px;  
 `;
+
 
 const ListItem = styled.li`
   list-style: none;
@@ -82,7 +83,7 @@ export default class App extends React.Component {
               </ListItem>           
              </List>
           </Navigation>
-                   <Routes>
+            <Routes>
             <Route path="/Inicio" element={<Inicio />} />
             <Route path="/Filmes" element={<Filmes />} />
             <Route path="/Series" element={<Series />} />
