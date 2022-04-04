@@ -18,12 +18,13 @@ const GlobalStyle = createGlobalStyle`
 }
 body{
  
-   background-color:pink;
+   background-color:PaleVioletRed;
 }
 `;
 const Navigation = styled.nav`
 background-color:pink;
 heigth:20vh;
+
 
 `;
 const List = styled.ul`
@@ -45,9 +46,20 @@ const Img = styled.img`
 const ListItem = styled.li`
   list-style: none;
   cursor: pointer;
-  font-sizzing:10px;
+  font-size: 10px;
   
 `;
+const LinkS = styled(Link)`
+color: white ;
+text-decoration:none;
+font-size: 2.5rem;
+
+&:hover{
+  font-size: 3rem ;
+  color: PaleVioletRed;
+}
+
+`
 
 
 export default class App extends React.Component {
@@ -60,13 +72,13 @@ export default class App extends React.Component {
             <List>
               <Img src={Foto} alt="Logo Tefflix"/> 
               <ListItem>
-                <Link to="/Inicio">Inicio</Link>
+                <LinkS to="/Inicio">Inicio</LinkS>
               </ListItem>
               <ListItem>
-                <Link to="/Filmes">Filmes</Link>
+                <LinkS to="/Filmes">Filmes</LinkS>
               </ListItem>
               <ListItem>
-                <Link to="/Series">Series</Link>
+                <LinkS to="/Series">Series</LinkS>
               </ListItem>           
              </List>
           </Navigation>

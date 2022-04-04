@@ -9,17 +9,6 @@ const Container = styled.div`
   font-family:  Roboto, sans-serif;
  
 `;
-const CaixaFilmes = styled.figure`
-display: flex;
-flex-direction:row;
-padding-top: 10px ;
-
-
-`;
-const Title = styled.figcaption`
-font-size: 1rem;
-text-align:center;
-`;
 
 const BoxInput = styled.div`
   display: flex;
@@ -37,14 +26,6 @@ top 13%
 `;
 
 
-const Posteres = styled.img`
-  border-radius: 5px;
-  width: 35vh;
-  height: 50vh;
-  margin: 4vh;
-  cursor: pointer;
- 
-`;
 
 const apiFilmes = axios.create({
   baseURL:
@@ -101,13 +82,7 @@ export default class App extends React.Component {
           />
         </BoxInput>
         <Container>
-          {this.state.filmesFiltrado.map((item) => (
-            <CaixaFilmes>
-                         
-              <Posteres src={item.poster_path} alt={item.title} />
-              <Title>{item.title}</Title>
-            </CaixaFilmes>
-          ))}
+         <h1>Bem Vindo ao Tefflix</h1>
         </Container>
       </div>
     );
