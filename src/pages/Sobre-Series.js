@@ -16,16 +16,18 @@ const Container = styled.div`
   flex-direction:column;
   
   `;
-const Title = styled.figcaption`
-font-size: 1rem;
-font-weight: 600;
-text-align:center;
-cursor: pointer;
-&:hover{
-  color:magenta;
-  font-size: 1.5rem;
-}
-`;
+  const Title = styled.figcaption`
+  font-size: 1.2rem;
+  text-align:center;
+  font-weight: 600;
+  cursor: pointer;
+  
+  &:hover{
+    color:magenta;
+   
+  }
+  
+  `;
 
 const BoxInput = styled.div`
   display: flex;
@@ -39,7 +41,7 @@ border-radius: 1000px;
 text-align:center;
 position: fixed;
 left:80%;
-top 13%
+top 7.5%
 `;
 
 const Posteres = styled.img`

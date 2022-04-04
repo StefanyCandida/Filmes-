@@ -24,12 +24,15 @@ body{
 const Navigation = styled.nav`
 background-color:pink;
 heigth:20vh;
+display: flex;
+justify-content: space-around;
+
+
 
 
 `;
 const List = styled.ul`
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   position: fixed;
@@ -40,7 +43,7 @@ const List = styled.ul`
 `;
 
 const Img = styled.img`
-   width: 100px;  
+   width: 8%;  
 `;
 
 
@@ -48,6 +51,7 @@ const ListItem = styled.li`
   list-style: none;
   cursor: pointer;
   font-size: 10px;
+  width: 50%;
   
 `;
 const LinkS = styled(Link)`
@@ -56,7 +60,7 @@ text-decoration:none;
 font-size: 2.5rem;
 
 &:hover{
-  font-size: 3rem ;
+  font-size: 2.5rem ;
   color: PaleVioletRed;
 }
 
@@ -70,8 +74,9 @@ export default class App extends React.Component {
         <Router>
           <GlobalStyle />
           <Navigation>
+           
             <List>
-              <Img src={Foto} alt="Logo Tefflix"/> 
+               <Img src={Foto} alt="Logo Tefflix"/> 
               <ListItem>
                 <LinkS to="/Inicio">Inicio</LinkS>
               </ListItem>

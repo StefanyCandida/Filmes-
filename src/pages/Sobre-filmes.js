@@ -16,15 +16,18 @@ const CaixaFilmes = styled.figure`
 display: flex;
 flex-direction:column;
 
+
+
 `;
 const Title = styled.figcaption`
-font-size: 1rem;
+font-size: 1.2rem;
 text-align:center;
 font-weight: 600;
 cursor: pointer;
+
 &:hover{
   color:magenta;
-  font-size: 1.5rem;
+ 
 }
 
 `;
@@ -41,13 +44,13 @@ border-radius: 1000px;
 text-align:center;
 position: fixed;
 left:80%;
-top 13%
+top 7.5%
  
 `;
 
 
 const Posteres = styled.img`
-  border-radius: 5px;
+  border-radius: 7px;
   width: 35vh;
   height: 50vh;
   margin: 4vh;
@@ -112,7 +115,7 @@ export default class App extends React.Component {
             <CaixaFilmes>
                <Posteres src={item.poster_path} alt={item.title} />
                <Title>{item.title}</Title> 
-               
+
                              
             </CaixaFilmes>
           ))}
