@@ -29,7 +29,7 @@ top 13%
 
 const apiFilmes = axios.create({
   baseURL:
-    "https://api.themoviedb.org/3/movie/popular?api_key=d2109f7fce9f4072f80df861fc4fdc66%20&language=en-US&page=1"
+    "https://api.themoviedb.org/3/tv/{tv_id}?api_key=d2109f7fce9f4072f80df861fc4fdc66&language=pt-br"
 });
 
 
