@@ -12,11 +12,15 @@ const Container = styled.div`
 const CaixaFilmes = styled.figure`
 display: flex;
 flex-direction:row;
+padding-top: 10px ;
+
 
 `;
 const Title = styled.figcaption`
 font-size: 1rem;
+text-align:center;
 `;
+
 const BoxInput = styled.div`
   display: flex;
   justify-content: flex-end;
