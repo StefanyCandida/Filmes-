@@ -45,7 +45,7 @@ const Posteres = styled.img`
 
 const apiFilmes = axios.create({
   baseURL:
-    "https://api.themoviedb.org/3/movie/popular?api_key=54e03ff5f44960d5ceb2552546493afd"
+    "https://api.themoviedb.org/3/movie/popular?api_key=d2109f7fce9f4072f80df861fc4fdc66%20&language=en-US&page=1"
 });
 
 export default class App extends React.Component {
