@@ -73,8 +73,7 @@ export default class App extends React.Component {
   }
   getMovies = async () => {
     const response = await apiFilmes.get();
-    // console.log(response.data.results)
-
+   
     const filmes = response.data.results.map((item) => {
       return {
         ...item,

@@ -33,7 +33,7 @@ justify-content: space-around;
 `;
 const List = styled.ul`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   position: fixed;
   width: 100%;
@@ -43,24 +43,24 @@ const List = styled.ul`
 `;
 
 const Img = styled.img`
-   width: 8%;  
+   width: 30%;  
+  
 `;
 
 
 const ListItem = styled.li`
   list-style: none;
   cursor: pointer;
-  font-size: 10px;
-  width: 50%;
+   width: 30%;
+   font-size: 2.5rem ;
   
 `;
 const LinkS = styled(Link)`
 color: white ;
 text-decoration:none;
-font-size: 2.5rem;
+font-size: 91%;
 
 &:hover{
-  font-size: 2.5rem ;
   color: PaleVioletRed;
 }
 
@@ -76,9 +76,9 @@ export default class App extends React.Component {
           <Navigation>
            
             <List>
-               <Img src={Foto} alt="Logo Tefflix"/> 
+            
               <ListItem>
-                <LinkS to="/Inicio">Inicio</LinkS>
+                <LinkS to="/Inicio"><Img src={Foto} alt="Logo Tefflix" Title="Inicio"/> </LinkS>
               </ListItem>
               <ListItem>
                 <LinkS to="/Filmes">Filmes</LinkS>
