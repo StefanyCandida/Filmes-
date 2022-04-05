@@ -43,8 +43,7 @@ const List = styled.ul`
 `;
 
 const Img = styled.img`
-   width: 30%;  
-  
+   width: 30%;   
 `;
 
 
@@ -52,7 +51,7 @@ const ListItem = styled.li`
   list-style: none;
   cursor: pointer;
    width: 30%;
-   font-size: 2.5rem ;
+   font-size: 2.6rem ;
   
 `;
 const LinkS = styled(Link)`
