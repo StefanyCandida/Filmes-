@@ -4,33 +4,34 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
-  align-items:center;
   flex-wrap: wrap;
   justify-content: center;
-  font-family:Roboto, sans-serif;
+  font-family:  Roboto, sans-serif;
   padding-top:10rem;
+  height:50vh;
  
+  `;
+  const CaixaFilmes = styled.figure`
+  display: flex;
+  flex-direction:column;
+  width: 20vw;
+
+  text-align:center;
  
-`;
-const CaixaFilmes = styled.figure`
-display: flex;
-flex-direction:column;
-
-
-
-`;
-const Title = styled.figcaption`
-font-size: 1.2rem;
-text-align:center;
-font-weight: 600;
-cursor: pointer;
-
-&:hover{
-  color:magenta;
- 
-}
-
-`;
+  
+  `;
+  const Title = styled.figcaption`
+  font-size: 1.2rem;
+  text-align:center;
+  font-weight: 600;
+  cursor: pointer;
+  
+  &:hover{
+    color:magenta;
+   
+  }
+  
+  `;
 
 const BoxInput = styled.div`
   display: flex;
@@ -39,27 +40,32 @@ const BoxInput = styled.div`
 `;
 const Input = styled.input`
 height: 5vh;
-width: 40vh;
+width: 20vw;
 border-radius: 1000px;
 text-align:center;
 position: fixed;
-left:80%;
+left:75%;
 top 7.5%
- 
 `;
 
-
 const Posteres = styled.img`
-  border-radius: 7px;
-  width: 35vh;
+  border-radius: 5px;
+  width: 15vw;
   height: 50vh;
   margin: 4vh;
   cursor: pointer;
  
 `;
+const P = styled.p`
+font-size: 0.8rem;
+width: 20vw;
+text-align:center;
+padding:10px;
+
+`;
 
 const apiFilmes = axios.create({
-  baseURL: "https://api.themoviedb.org/3/movie/popular?api_key=d2109f7fce9f4072f80df861fc4fdc66&language=en-US&page=1"
+  baseURL: "https://api.themoviedb.org/3/movie/popular?api_key=d2109f7fce9f4072f80df861fc4fdc66&language=pt-BR&page=1"
 });
 
 export default class App extends React.Component {
@@ -114,6 +120,7 @@ export default class App extends React.Component {
             <CaixaFilmes>
                <Posteres src={item.poster_path} alt={item.title} />
                <Title>{item.title}</Title> 
+               <P>{item.overview}</P>
 
                              
             </CaixaFilmes>

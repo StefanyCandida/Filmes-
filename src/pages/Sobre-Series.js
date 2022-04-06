@@ -8,12 +8,16 @@ const Container = styled.div`
   justify-content: center;
   font-family:  Roboto, sans-serif;
   padding-top:10rem;
- 
+  height:50vh;
  
   `;
   const CaixaFilmes = styled.figure`
   display: flex;
   flex-direction:column;
+  width: 20vw;
+
+  text-align:center;
+ 
   
   `;
   const Title = styled.figcaption`
@@ -36,25 +40,32 @@ const BoxInput = styled.div`
 `;
 const Input = styled.input`
 height: 5vh;
-width: 40vh;
+width: 20vw;
 border-radius: 1000px;
 text-align:center;
 position: fixed;
-left:80%;
+left:75%;
 top 7.5%
 `;
 
 const Posteres = styled.img`
   border-radius: 5px;
-  width: 35vh;
+  width: 15vw;
   height: 50vh;
   margin: 4vh;
   cursor: pointer;
  
 `;
+const P = styled.p`
+font-size: 0.8rem;
+width: 20vw;
+text-align:center;
+padding:10px;
+
+`;
 
 const apiFilmes = axios.create({
-  baseURL: "https://api.themoviedb.org/3/tv/popular?api_key=d2109f7fce9f4072f80df861fc4fdc66&language=en-US&page=1"
+  baseURL: "https://api.themoviedb.org/3/tv/popular?api_key=d2109f7fce9f4072f80df861fc4fdc66&language=pt-BR&page=1"
 });
 
 export default class Series extends React.Component {
@@ -111,7 +122,7 @@ export default class Series extends React.Component {
          <CaixaFilmes>
                <Posteres src={item.poster_path} alt={item.name} />
                <Title>{item.name}</Title> 
-                             
+               <P>{item.overview}</P>                             
             </CaixaFilmes>
           ))}
         </Container>

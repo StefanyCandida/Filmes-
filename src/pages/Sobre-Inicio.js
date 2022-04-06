@@ -66,7 +66,8 @@ export default class App extends React.Component {
         
         <Container>
           <h1>Bem vindes ao Tefflix</h1>
-         <Img src={Foto} alt="Logo Tefflix"/> 
+         <Img src={Foto} alt="Logo Tefflix"/>
+          
          
 
         </Container>
